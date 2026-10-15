@@ -52,6 +52,7 @@ export default function Home() {
           </a>
           <div className="nav-links">
             <a href="/standard-warehouse">标准仓</a>
+            <a href="/jinghuiji">鲸汇集</a>
             <a href="#solutions">解决方案</a>
             <a href="#dispatch">仓配能力</a>
             <a href="#knowledge">问答中心</a>
@@ -69,6 +70,7 @@ export default function Home() {
               <a className="button ghost" href="#solutions">查看方案库</a>
             </div>
             <a className="home-warehouse-link" href="/standard-warehouse">标准仓 · 仓网共建 <span aria-hidden="true">↗</span></a>
+            <a className="home-warehouse-link home-market-link" href="/jinghuiji">鲸汇集 · 可租可买可换 <span aria-hidden="true">↗</span></a>
           </div>
 
           <div className="command-board" aria-label="仓小云实时调度面板">
@@ -150,7 +152,7 @@ export default function Home() {
         <p>先准备城市、人数、场地、时间、活动流程和用电需求六项信息，再从选型手册开始梳理物料范围。</p>
         <a className="button primary" href="#field-guide">查看配置清单 <span>→</span></a>
       </section>
-      <footer><span>仓小云 · 中域云仓的活动物料执行 IP</span><a href="/standard-warehouse">标准仓 · 仓网共建 ↗</a><span>长三角活动物料与会展道具租赁解决方案</span></footer>
+      <footer><span>仓小云 · 中域云仓的活动物料执行 IP</span><a href="/standard-warehouse">标准仓 · 仓网共建 ↗</a><a href="/jinghuiji">鲸汇集 · 售卖中心 ↗</a><span>长三角活动物料与会展道具租赁解决方案</span></footer>
     </main>
   );
 }
