@@ -42,10 +42,17 @@ npm run start
 
 ## 发布与验证
 
-网站目前通过 Sites 发布；GitHub 仓库用于源码管理。推送 GitHub 不会自动更新现有网站，也没有配置 GitHub Pages 部署。当前项目包含服务端运行逻辑，不能直接作为纯静态 GitHub Pages 网站发布。
+网站同时支持 Sites 与 GitHub Pages：
+
+- Sites：https://cangxiaoyun.zaqprmhm56595.chatgpt.site/
+- GitHub Pages：https://hankjun.github.io/cangxiaoyun/
+
+推送 `main` 后，`.github/workflows/pages.yml` 自动运行 `npm ci`、`npm run build:pages` 并发布 `out/`。工作流也支持手动触发。Pages 构建使用 Next.js 静态导出，固定项目路径 `/cangxiaoyun`，包含三页 HTML、样式及客户端交互。`app/site-path.ts` 统一页面导航路径；元数据在静态构建时使用 GitHub 域名。
+
+默认 `npm run build` 保留 Vinext / Sites 构建。GitHub 推送不会自动更新独立的 Sites 版本。
 
 源码基线对应已发布提交 `44573d8587bda027051d7b69a8a43c69c0166277`。该版本已完成生产构建、鲸汇集交互和手机布局验证。
 
 `tests/rendered-html.test.mjs` 是保留的初始模板测试，尚未适配当前网站；当前验证使用 `npm run build` 和浏览器检查。
 
-请勿提交 `.env`、访问令牌、`node_modules` 或构建产物。仓库默认设为私有，网站访问权限独立由 Sites 管理。
+请勿提交 `.env`、访问令牌、`node_modules` 或构建产物。仓库及 GitHub Pages 已按所有者要求公开；Sites 访问权限由 Sites 独立管理。
