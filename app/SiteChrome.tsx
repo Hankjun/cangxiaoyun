@@ -1,13 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 import { sitePath } from "./site-path";
 
 const links = [["/", "首页"], ["/standard-warehouse", "标准仓"], ["/jinghuiji", "鲸汇集"], ["/ip", "仓小云 IP"]];
 export function SiteHeader() {
- const pathname=usePathname();
+ const [pathname,setPathname]=useState<string|null>(null);
  const [theme,setTheme]=useState("light"),[open,setOpen]=useState(false);
- useEffect(()=>{setTheme(document.documentElement.dataset.theme||"light");},[]);
+ useEffect(()=>{setTheme(document.documentElement.dataset.theme||"light");setPathname(window.location.pathname.replace(/^\/cangxiaoyun(?=\/|$)/,""));},[]);
  useEffect(()=>{const escape=(e:KeyboardEvent)=>{if(e.key==="Escape")setOpen(false);};window.addEventListener("keydown",escape);return()=>window.removeEventListener("keydown",escape);},[]);
  const choose=(value:string)=>{document.documentElement.dataset.theme=value;setTheme(value);try{localStorage.setItem("cangxiaoyun-theme",value);}catch{}};
  return <header className="site-header"><a className="site-skip" href="#site-content">跳到主要内容</a><a className="site-brand" href={sitePath("/")}><img src={sitePath("/ip/welcome.webp")} alt="" width="48" height="54"/><span>仓小云<small>中域云仓 · 让现场心里有底</small></span></a><nav id="site-navigation" className={open?"site-navigation is-open":"site-navigation"} aria-label="主导航">{links.map(([url,label])=><a key={url} href={sitePath(url)} aria-current={pathname?.replace(/\/$/,"")===url.replace(/\/$/,"")?"page":undefined} onClick={()=>setOpen(false)}>{label}<span aria-hidden="true">↗</span></a>)}</nav><div className="site-tools"><div className="theme-switch" role="group" aria-label="外观主题"><button type="button" aria-label="浅色主题" aria-pressed={theme==="light"} onClick={()=>choose("light")}><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/></svg><span>浅色</span></button><button type="button" aria-label="深色主题" aria-pressed={theme==="dark"} onClick={()=>choose("dark")}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 13a9 9 0 0 1-10-10A9 9 0 1 0 21 13Z"/></svg><span>深色</span></button></div><button className="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded={open} onClick={()=>setOpen(!open)}>{open?"关闭":"菜单"}<span aria-hidden="true">{open?"×":"☰"}</span></button></div></header>;
