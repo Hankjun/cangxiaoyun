@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { sitePath } from "./site-path";
 
-const links = [["/", "首页"], ["/standard-warehouse", "标准仓"], ["/jinghuiji", "鲸汇集"], ["/ip", "仓小云 IP"]];
+const links = [["/", "首页"], ["/standard-warehouse", "标准仓"], ["/network", "长三角仓网"], ["/jinghuiji", "鲸汇集"], ["/ip", "仓小云 IP"]];
 export function SiteHeader() {
  const [pathname,setPathname]=useState<string|null>(null);
  const [theme,setTheme]=useState("light"),[open,setOpen]=useState(false);

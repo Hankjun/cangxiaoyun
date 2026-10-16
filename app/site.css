@@ -27,3 +27,5 @@ html[data-theme="dark"] .warehouse-page .wh-palette span:nth-child(2),html[data-
 .home-character-photo{background:transparent;border-radius:0;overflow:visible}
 .home-character-photo>span{color:var(--ui-muted)}
 .home-character-photo>img{filter:drop-shadow(0 12px 17px #0002)}
+
+.wh-network-center-link{display:inline-flex;align-items:center;min-height:44px;border-bottom:1px solid currentColor;font-size:12px;margin-top:14px;color:inherit}

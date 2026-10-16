@@ -1,3 +1,4 @@
+import NetworkExplorer from "./network/NetworkExplorer";
 import ScenePlanner from "./ScenePlanner";
 import { sitePath } from "./site-path";
 export default function Home() {
@@ -82,6 +83,8 @@ export default function Home() {
         </div>
         <div className="cities"><p>城市仓网络</p><div><b>无锡</b><b>常州</b><b>扬州</b><b>苏州</b><strong>长三角多城联动</strong></div></div>
       </section>
+
+      <NetworkExplorer compact/>
 
       <section className="section scenes">
         <p className="eyebrow"><span />场景方案</p><div className="scene-header"><h2>每一个现场，<br /><i>都有标准解法。</i></h2><p>从清单到进场，仓小云用可执行的物料组合，帮助活动团队更快做决定。</p></div>
