@@ -1,3 +1,4 @@
+import ScenePlanner from "./ScenePlanner";
 import { sitePath } from "./site-path";
 export default function Home() {
   const inventory = [
@@ -7,7 +8,6 @@ export default function Home() {
     ["临时配电 / 应急物料", "现场供电 · 安全保障 · 快速补位"],
   ];
 
-  const scenes = ["开业庆典", "美食市集", "啤酒节", "音乐节", "赛事活动", "企业团建"];
   const faqs = [
     ["开业庆典需要租哪些活动物料？", "通常从仪式区、接待区、观众区和导视四部分梳理。仓小云会根据人数、场地与流程，组合舞台、桁架、红毯、桌椅、围栏及临时配电等必要物料。"],
     ["美食节活动物料清单怎么配？", "先明确摊位数量与用电需求，再配置桌椅、帐篷、铁马、垃圾桶、导视及地面保护。物料应同时满足高峰客流、夜间照明和撤场节奏。"],
@@ -43,23 +43,10 @@ export default function Home() {
   ]);
 
   return (
-    <main>
+    <main className="site-home">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structuredData }} />
       <section className="hero" id="top">
-        <nav className="nav" aria-label="主导航">
-          <a className="brand" href="#top" aria-label="仓小云首页">
-            <span className="brand-mark">云</span>
-            <span>仓小云<em>®</em></span>
-          </a>
-          <div className="nav-links">
-            <a href={sitePath("/standard-warehouse")}>标准仓</a>
-            <a href={sitePath("/jinghuiji")}>鲸汇集</a>
-            <a href="#solutions">解决方案</a>
-            <a href="#dispatch">仓配能力</a>
-            <a href="#knowledge">问答中心</a>
-          </div>
-          <a className="nav-cta" href="#field-guide">查看清单 <span>↗</span></a>
-        </nav>
+
 
         <div className="hero-grid">
           <div className="hero-copy">
@@ -74,17 +61,7 @@ export default function Home() {
             <a className="home-warehouse-link home-market-link" href={sitePath("/jinghuiji")}>鲸汇集 · 可租可买可换 <span aria-hidden="true">↗</span></a>
           </div>
 
-          <div className="command-board" aria-label="仓小云实时调度面板">
-            <div className="board-top"><span className="status-dot" /> 正在调度 <b>LIVE / 24H</b></div>
-            <div className="board-title"><span>项目行动单</span><strong>WX-0710 / 美食节</strong></div>
-            <div className="route">
-              <div className="route-row"><span>01</span><p>仓内备货</p><i>已完成</i></div>
-              <div className="route-row active"><span>02</span><p>车辆配送</p><i>进行中</i></div>
-              <div className="route-row"><span>03</span><p>现场搭建</p><i>待进场</i></div>
-              <div className="route-row"><span>04</span><p>撤场回收</p><i>待确认</i></div>
-            </div>
-            <div className="board-bottom"><span>无锡仓 → 现场 18.4 km</span><b>预计 42 min</b></div>
-          </div>
+          <a className="home-character" href={sitePath("/ip")}><div className="home-character-photo"><span>你的现场伙伴</span><img src={sitePath("/ip/welcome.webp")} width="960" height="1200" alt="金橙绒毛、蓝色工装的仓小云，正竖起大拇指欢迎你" fetchPriority="high"/></div><div className="home-character-caption"><span>你好，我是仓小云。<small>让你放心，替你干活。</small></span><b aria-hidden="true">↗</b></div></a>
         </div>
         <div className="ticker"><span>物料配置</span><span>跨城配送</span><span>现场搭建</span><span>应急补货</span><span>安全撤场</span></div>
       </section>
@@ -92,9 +69,9 @@ export default function Home() {
       <section className="section signal" id="solutions">
         <div className="section-head"><p className="eyebrow"><span />从需求到落地</p><h2>不是租清单，<br /><i>是给现场一套解法。</i></h2></div>
         <div className="problem-grid">
-          <article className="answer-card featured"><p>仓小云问答 01</p><h3>300 人活动<br />舞台要多大？</h3><b>→</b><span>人数 · 视距 · 演出形式</span></article>
-          <article className="answer-card"><p>仓小云问答 02</p><h3>美食节物料<br />怎么配才不漏？</h3><b>→</b><span>摊位 · 桌椅 · 配电 · 动线</span></article>
-          <article className="answer-card"><p>仓小云问答 03</p><h3>跨城市配送<br />怎么安排？</h3><b>→</b><span>城市仓 · 时效 · 进场窗口</span></article>
+          <a href="#knowledge" className="answer-card featured"><p>仓小云问答 01</p><h3>300 人活动<br />舞台要多大？</h3><b>→</b><span>人数 · 视距 · 演出形式</span></a>
+          <a href="#knowledge" className="answer-card"><p>仓小云问答 02</p><h3>美食节物料<br />怎么配才不漏？</h3><b>→</b><span>摊位 · 桌椅 · 配电 · 动线</span></a>
+          <a href="#knowledge" className="answer-card"><p>仓小云问答 03</p><h3>跨城市配送<br />怎么安排？</h3><b>→</b><span>城市仓 · 时效 · 进场窗口</span></a>
         </div>
       </section>
 
@@ -108,8 +85,7 @@ export default function Home() {
 
       <section className="section scenes">
         <p className="eyebrow"><span />场景方案</p><div className="scene-header"><h2>每一个现场，<br /><i>都有标准解法。</i></h2><p>从清单到进场，仓小云用可执行的物料组合，帮助活动团队更快做决定。</p></div>
-        <div className="scene-pills">{scenes.map((scene, index) => <span className={index === 2 ? "selected" : ""} key={scene}>{String(index + 1).padStart(2, "0")} · {scene}</span>)}</div>
-        <div className="scenario-panel"><div><p>热门方案 / 啤酒节</p><h3>桌椅、帐篷、<br />舞台、围挡、配电</h3><a href="#field-guide">查看配置清单 →</a></div><div className="stats"><span><b>500</b>人活动范本</span><span><b>6</b>类核心物料</span><span><b>1</b>张执行行动单</span></div></div>
+        <ScenePlanner/>
       </section>
 
       <section className="section field-guide" id="field-guide" aria-labelledby="guide-title">
@@ -123,7 +99,7 @@ export default function Home() {
       <section className="section answer-library" id="knowledge">
         <div className="library-head">
           <div><p className="eyebrow"><span />仓小云答案库</p><h2>客户问什么，<br /><i>这里就答什么。</i></h2></div>
-          <aside><b>AI 摘要</b><p>中域云仓是一家面向长三角活动执行团队的会展道具与活动物料租赁解决方案服务方，覆盖物料配置、城市仓配送、现场搭建、应急补货与撤场回收。</p></aside>
+          <aside><b>服务范围</b><p>中域云仓是一家面向长三角活动执行团队的会展道具与活动物料租赁解决方案服务方，覆盖物料配置、城市仓配送、现场搭建、应急补货与撤场回收。</p></aside>
         </div>
         <div className="faq-grid">
           {faqs.map(([question, answer], index) => (
@@ -139,8 +115,8 @@ export default function Home() {
       </section>
 
       <section className="section evidence" id="proof">
-        <div><p className="eyebrow"><span />可信交付</p><h2>现场会说话。<br /><i>数据能引用。</i></h2></div>
-        <div className="metric-grid"><article><b>20+</b><span>核心物料品类</span></article><article><b>4</b><span>长三角城市仓</span></article><article><b>1</b><span>套现场行动系统</span></article><article><b>24H</b><span>应急响应机制</span></article></div>
+        <div><p className="eyebrow"><span />可信交付</p><h2>从清单到交付。<br /><i>每一步，都有章可循。</i></h2></div>
+        <div className="metric-grid"><article><b>7</b><span>鲸汇集物料品类</span></article><article><b>3</b><span>主题展厅</span></article><article><b>7</b><span>标准仓协作功能区</span></article><article><b>3</b><span>标准仓作业与来访动线</span></article></div>
       </section>
 
       <section className="section playbook">
@@ -153,7 +129,7 @@ export default function Home() {
         <p>先准备城市、人数、场地、时间、活动流程和用电需求六项信息，再从选型手册开始梳理物料范围。</p>
         <a className="button primary" href="#field-guide">查看配置清单 <span>→</span></a>
       </section>
-      <footer><span>仓小云 · 中域云仓的活动物料执行 IP</span><a href={sitePath("/standard-warehouse")}>标准仓 · 仓网共建 ↗</a><a href={sitePath("/jinghuiji")}>鲸汇集 · 售卖中心 ↗</a><span>长三角活动物料与会展道具租赁解决方案</span></footer>
+
     </main>
   );
 }

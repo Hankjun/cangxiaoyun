@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
-import "./globals.css";
 import { sitePath } from "./site-path";
+import "./globals.css";
+import "./site.css";
+import { SiteHeader, SiteFooter, BackToTop } from "./SiteChrome";
 
 export async function generateMetadata(): Promise<Metadata> {
   const pages = process.env.GITHUB_PAGES === "true";
@@ -25,8 +27,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN">
-      <body>{children}</body>
+    <html lang="zh-CN" suppressHydrationWarning>
+      <head><script dangerouslySetInnerHTML={{__html:`try{const q=new URLSearchParams(location.search).get("theme");const stored=localStorage.getItem("cangxiaoyun-theme");document.documentElement.dataset.theme=q==="dark"||q==="light"?q:stored==="dark"||stored==="light"?stored:matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";}catch{document.documentElement.dataset.theme="light";}`}}/></head>
+      <body><SiteHeader/><div id="site-content" tabIndex={-1}>{children}</div><SiteFooter/><BackToTop/></body>
     </html>
   );
 }

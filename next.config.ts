@@ -4,6 +4,7 @@ const nextConfig: NextConfig = pages ? {
   output: "export",
   basePath: "/cangxiaoyun",
   trailingSlash: true,
+  env: { NEXT_PUBLIC_BASE_PATH: "/cangxiaoyun" },
   images: { unoptimized: true },
   typescript: { tsconfigPath: "tsconfig.pages.json" },
 } : {};
