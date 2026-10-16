@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useState } from "react";
 import { sitePath } from "../site-path";
-const poses=[{id:"welcome",name:"点赞欢迎",caption:"确认与欢迎，把放心写在脸上。"},{id:"trolley",name:"推车上岗",caption:"从周转到交付，每一步认真对待。"},{id:"safety",name:"安全引导",caption:"停一下，先让现场有序。"},{id:"inspect",name:"作业检查",caption:"核对再确认，把细节放在心上。"}];
+const poses=[{id:"welcome-transparent",name:"点赞欢迎",caption:"确认与欢迎，把放心写在脸上。"},{id:"trolley-transparent",name:"推车上岗",caption:"从周转到交付，每一步认真对待。"},{id:"safety",name:"安全引导",caption:"停一下，先让现场有序。"},{id:"inspect",name:"作业检查",caption:"核对再确认，把细节放在心上。"}];
 const works=[
 {id:"exhibition",name:"会展云",group:"职业季",detail:"会展现场的服务伙伴"},{id:"market",name:"市集云",group:"职业季",detail:"走进热闹的市集"},{id:"tent",name:"帐篷云",group:"职业季",detail:"撑起活动的第一现场"},{id:"furniture",name:"桌椅云",group:"职业季",detail:"把每一个位置安排妥当"},{id:"power",name:"电力云",group:"职业季",detail:"认真对待每一处用电"},{id:"concert",name:"音乐会云",group:"职业季",detail:"为舞台与观演现场服务"},
 {id:"poster-store",name:"货在仓，心不慌",group:"品牌海报",detail:"仓储与品牌表达"},{id:"poster-material",name:"活动所需，一站配齐",group:"品牌海报",detail:"物料配置主题"},{id:"poster-delivery",name:"从出仓，到收场",group:"品牌海报",detail:"交付服务主题"},{id:"poster-network",name:"多仓联动，就近响应",group:"品牌海报",detail:"仓网协作主题"},{id:"poster-reuse",name:"好物料，不止一场",group:"品牌海报",detail:"循环使用主题"},{id:"poster-partner",name:"你的现场，我来用心",group:"品牌海报",detail:"伙伴服务主题"},

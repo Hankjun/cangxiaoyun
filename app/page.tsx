@@ -61,7 +61,7 @@ export default function Home() {
             <a className="home-warehouse-link home-market-link" href={sitePath("/jinghuiji")}>鲸汇集 · 可租可买可换 <span aria-hidden="true">↗</span></a>
           </div>
 
-          <a className="home-character" href={sitePath("/ip")}><div className="home-character-photo"><span>你的现场伙伴</span><img src={sitePath("/ip/welcome.webp")} width="960" height="1200" alt="金橙绒毛、蓝色工装的仓小云，正竖起大拇指欢迎你" fetchPriority="high"/></div><div className="home-character-caption"><span>你好，我是仓小云。<small>让你放心，替你干活。</small></span><b aria-hidden="true">↗</b></div></a>
+          <a className="home-character" href={sitePath("/ip")}><div className="home-character-photo"><span>你的现场伙伴</span><img src={sitePath("/ip/welcome-transparent.webp")} width="960" height="1200" alt="金橙绒毛、蓝色工装的仓小云，正竖起大拇指欢迎你" fetchPriority="high"/></div><div className="home-character-caption"><span>你好，我是仓小云。<small>让你放心，替你干活。</small></span><b aria-hidden="true">↗</b></div></a>
         </div>
         <div className="ticker"><span>物料配置</span><span>跨城配送</span><span>现场搭建</span><span>应急补货</span><span>安全撤场</span></div>
       </section>

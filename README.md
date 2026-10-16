@@ -49,7 +49,7 @@ npm run build:pages
 - `app/`：页面和交互；`SiteChrome.tsx` 管理导航与主题控件
 - `app/site.css`：深浅主题、全站框架与首页优化样式
 - `app/site-path.ts`：统一 Sites / Pages 导航和静态资源路径
-- `public/ip/`：从用户提供的《仓小云 IP 形象作品集》（2026.10.15）提取的原始形象，按需压缩为 WebP，保留原有透明通道
+- `public/ip/`：从用户提供的《仓小云 IP 形象作品集》（2026.10.15）提取的原始形象，按需压缩为 WebP，保留原有透明通道；点赞主形象和推车形象已使用 Imagegen 去底生成透明版本，导航使用单独的小尺寸透明资源
 - `tokens.css`：标准仓模型的品牌与空间配色
 - `worker/`、`build/`：Cloudflare Workers 与 Sites 构建集成
 - `.openai/hosting.json`：现有 Sites 项目标识及存储声明
