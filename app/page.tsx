@@ -127,6 +127,11 @@ export default function Home() {
         <div className="playbook-steps"><article><span>T - 7 天</span><h3>确认需求</h3><p>活动规模、城市、场地、时间、流程与用电需求，形成首版物料范围。</p></article><article><span>T - 3 天</span><h3>锁定行动单</h3><p>确认物料规格、进场窗口、装卸条件、搭建顺序与现场联络方式。</p></article><article><span>T - 1 天</span><h3>仓内备货</h3><p>按行动单复核物料，安排车辆、人员与应急补位的响应链路。</p></article><article><span>活动当天</span><h3>搭建与交接</h3><p>按区域进场，完成现场搭建、动线核查与撤场衔接。</p></article></div>
       </section>
 
+      <section className="section home-documents" aria-labelledby="home-documents-title">
+        <div><p className="eyebrow"><span />文档下载 / 企业文化</p><h2 id="home-documents-title">理解我们，<br /><i>从共同的信念开始。</i></h2><p>阅读《中域玖壹企业文化解读》，了解“生机 · 图腾 · 上善”背后的文化与成长理念。</p><a className="brand-button" href={sitePath("/downloads")}>进入文档下载区 <span aria-hidden="true">↗</span></a></div>
+        <a className="home-document-cover" href={sitePath("/downloads")}><img src={sitePath("/documents/culture-cover.webp")} width="960" height="540" alt="《中域玖壹企业文化解读》封面" loading="lazy"/><span>企业文化手册 <small>PDF · 12 页 · 在线阅读 / 原版下载</small><b aria-hidden="true">↗</b></span></a>
+      </section>
+
       <section className="contact" id="contact">
         <p className="eyebrow"><span />准备开始</p><h2>让仓小云帮你<br /><i>把现场跑起来。</i></h2>
         <p>先准备城市、人数、场地、时间、活动流程和用电需求六项信息，再从选型手册开始梳理物料范围。</p>
