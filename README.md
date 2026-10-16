@@ -75,3 +75,5 @@ npm run build:pages
 ## 文档下载
 
 `public/documents/zhongyu-jiuyi-culture.pdf` 为用户提供的《中域玖壹企业文化解读》完整原版（12 页），首页、主导航和页脚均提供文档区入口。文中数据、组织与规划属于原文历史表述，不能作为当前仓网运营资料。新增文档时同步维护页面元信息与导览；PDF 和资源地址须通过 `sitePath` 适配两个托管环境。
+
+新增《中域玖壹—用道具创造创意生活（优化版）》原版 PDF（18 页，`public/documents/zhongyu-creative-life.pdf`），下载区提供独立封面、文件信息、在线阅读与中文文件名下载。文中业务数据以原文所载时期为准。

@@ -128,7 +128,7 @@ export default function Home() {
       </section>
 
       <section className="section home-documents" aria-labelledby="home-documents-title">
-        <div><p className="eyebrow"><span />文档下载 / 企业文化</p><h2 id="home-documents-title">理解我们，<br /><i>从共同的信念开始。</i></h2><p>阅读《中域玖壹企业文化解读》，了解“生机 · 图腾 · 上善”背后的文化与成长理念。</p><a className="brand-button" href={sitePath("/downloads")}>进入文档下载区 <span aria-hidden="true">↗</span></a></div>
+        <div><p className="eyebrow"><span />文档下载 / 企业介绍与文化</p><h2 id="home-documents-title">理解我们，<br /><i>从共同的信念开始。</i></h2><p>阅读企业介绍与文化手册，了解中域玖壹的业务架构，以及“生机 · 图腾 · 上善”背后的文化与成长理念。</p><a className="brand-button" href={sitePath("/downloads")}>进入文档下载区 <span aria-hidden="true">↗</span></a></div>
         <a className="home-document-cover" href={sitePath("/downloads")}><img src={sitePath("/documents/culture-cover.webp")} width="960" height="540" alt="《中域玖壹企业文化解读》封面" loading="lazy"/><span>企业文化手册 <small>PDF · 12 页 · 在线阅读 / 原版下载</small><b aria-hidden="true">↗</b></span></a>
       </section>
 

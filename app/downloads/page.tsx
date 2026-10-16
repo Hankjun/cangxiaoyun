@@ -3,8 +3,8 @@ import { sitePath } from "../site-path";
 import "./downloads.css";
 
 export const metadata: Metadata = {
-  title: "文档下载｜中域玖壹企业文化",
-  description: "在线阅读或下载《中域玖壹企业文化解读》原版 PDF，了解生机、图腾、上善与中域人的成长理念。",
+  title: "文档下载｜中域玖壹企业介绍与文化",
+  description: "在线阅读或下载中域玖壹企业介绍与企业文化原版 PDF，了解品牌业务、道具服务与共同信念。",
 };
 const chapters = [
   ["01", "文化是什么", "从起源与语境出发，理解文化如何成为做事的习惯。"],
@@ -17,7 +17,11 @@ export default function DownloadsPage() {
   return <main className="downloads-page">
     <section className="docs-intro"><p className="brand-kicker"><span/>资料中心 / DOCUMENTS</p><h1>把共同的信念，<br/><em>留在每一次行动里。</em></h1><p>从企业文化出发，认识中域的初心、做事方式与成长理念。<br/>在这里，阅读与下载我们的品牌资料。</p><a href="#document-library" className="docs-jump">浏览文档 <span aria-hidden="true">↓</span></a></section>
     <section className="docs-library" id="document-library" aria-labelledby="library-title">
-      <div className="docs-library-heading"><h2 id="library-title">文档下载</h2><span>01 份资料 / 企业文化</span></div>
+      <div className="docs-library-heading"><h2 id="library-title">文档下载</h2><span>02 份资料 / 企业介绍 · 企业文化</span></div>
+      <article className="docs-feature" id="creative-life">
+        <a className="docs-cover" href={sitePath("/documents/zhongyu-creative-life.pdf")} target="_blank" rel="noreferrer" aria-label="打开原版 PDF：《中域玖壹—用道具创造创意生活（优化版）》（新窗口）"><img src={sitePath("/documents/creative-life-cover.webp")} width="768" height="432" alt="中域玖壹，用道具创造创意生活，让会展更专业，让场景更简单"/><span>打开原版 PDF <b aria-hidden="true">↗</b></span></a>
+        <div className="docs-detail"><p className="docs-category">企业介绍 · 优化版</p><h3>中域玖壹<br/>用道具创造创意生活</h3><p className="docs-summary">了解中域玖壹的品牌与业务架构、道具行业的需求，以及智能仓库、线上平台、物流与研发的协作方式。</p><dl className="docs-meta"><div><dt>文件格式</dt><dd>PDF</dd></div><div><dt>文档页数</dt><dd>18 页</dd></div><div><dt>文件大小</dt><dd>2.8 MB</dd></div></dl><div className="docs-actions"><a className="brand-button" href={sitePath("/documents/zhongyu-creative-life.pdf")} download="中域玖壹—用道具创造创意生活（优化版）.pdf">下载原版 PDF <span aria-hidden="true">↓</span></a><a className="docs-read" href={sitePath("/documents/zhongyu-creative-life.pdf")} target="_blank" rel="noreferrer">在线阅读 <span aria-hidden="true">↗</span><span className="docs-sr">（新窗口）</span></a></div><p className="docs-note">保留优化版完整内容。文中业务数据与发展情况以原文所载时期为准。</p></div>
+      </article>
       <article className="docs-feature">
         <a className="docs-cover" href={pdf} target="_blank" rel="noreferrer" aria-label="打开原版 PDF：《中域玖壹企业文化解读》（新窗口）"><img src={sitePath("/documents/culture-cover.webp")} width="960" height="540" alt="中域玖壹企业文化解读，生机 · 图腾 · 上善"/><span>打开原版 PDF <b aria-hidden="true">↗</b></span></a>
         <div className="docs-detail"><p className="docs-category">企业文化 · 历史资料</p><h3>中域玖壹<br/>企业文化解读</h3><p className="docs-summary">从“文化是什么”到“我们将走向哪里”，用一份手册，读懂中域人的共同信念。</p><dl className="docs-meta"><div><dt>文件格式</dt><dd>PDF</dd></div><div><dt>文档页数</dt><dd>12 页</dd></div><div><dt>文件大小</dt><dd>1.3 MB</dd></div></dl><div className="docs-actions"><a className="brand-button" href={pdf} download="中域玖壹企业文化解读.pdf">下载原版 PDF <span aria-hidden="true">↓</span></a><a className="docs-read" href={pdf} target="_blank" rel="noreferrer">在线阅读 <span aria-hidden="true">↗</span><span className="docs-sr">（新窗口）</span></a></div><p className="docs-note">保留原文完整内容。文中企业数据、组织与规划为原文历史表述。</p></div>
